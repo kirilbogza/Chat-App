@@ -4,30 +4,32 @@
 
 body,
 html {
-  height: 100vh;
   padding: 0;
-  background-image: url("assets\image-background.jpg");
-}
-
-.app {
-    display: flex;
+  background-image: url("assets/image-background.jpg");
+  overflow-y: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
   height: 50px;
   background-color: #d9d9d9;
   border-bottom: 1px solid black;
+  z-index: 1;
 }
 
 .sidebar {
     display: flex;
-    flex-direction: row;
-    height: 100vh;
+    top: 0;
+    left: 0;
+    height: 100vh !important;
     background-color: #d9d9d9;
     border-right: 1px solid black;
+    transition: width 0.3s ease;
+    z-index: 100;
+    margin-top: -50px;
 }
 
-button {
+.button-sidebar {
     height: 50px;
     width: 100px;
     background-color: white;
@@ -37,13 +39,94 @@ button {
     margin: 10px;
 }
 
-button:hover {
-    height: 60px;
-    width: 110px;
+.button-sidebar:hover {
+    height: 45px;
+    width: 95px;
     border: 1px solid black;
+    transition: width 0.1s ease;
 }
 
-button:active {
-    height: 50px;
+.button-sidebar:active {
+    height: 40px;
+    width: 90px;
+    transition: width 0.1s ease;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.message {
+    height: 100px;
     width: 100px;
+    background-color: red;
+    margin: 50px 50px 0 0;
+}
+
+.container-input {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+input {
+    height: 80px;
+    width: 100%;
+    margin-bottom: 150px;
+    border-radius: 20px;
+    border: none;
+    background-color: #d9d9d9;
+    font-size: larger;
+    color: black;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.button-submit {
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: #0A3B16;
+    border: none;
+    margin: 15px 30px;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/send.png");
+}
+
+.button-submit:hover {
+    height: 45px;
+    width: 45px;
+    margin: 18px 30px;
+    transition: width 0.1s ease;
+}
+
+.button-submit:active {
+    height: 40px;
+    width: 40px;
+    margin: 20px 30px;
+    transition: width 0.1s ease;
+}
+
+.container-chats {
+    margin: 150px 0 0 100px;
+    font-size: larger;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
