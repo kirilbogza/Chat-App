@@ -25,7 +25,6 @@ function App() {
     socket.on("chat_room", (data: string) => {
       console.log("Data received: ", data);
 
-
       setMessages((prev) => [...prev, JSON.stringify(data)]);
 
       console.log(messages);
@@ -48,8 +47,11 @@ function App() {
 
     socket.emit("chat_room", stringifiedMessage);
   };
-
-  <Layout connectionStatus={connectionStatus} messages={messages}></Layout>;
+  return (
+    <>
+      <Layout connectionStatus={connectionStatus} messages={messages}></Layout>
+    </>
+  );
 }
 
 export default App;

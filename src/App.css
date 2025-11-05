@@ -1,10 +1,49 @@
-body, html {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-image: url("assets\image-background.jpg");
-
+* {
+  margin: 0;
 }
 
-#root {
+body,
+html {
+  height: 100vh;
+  padding: 0;
+  background-image: url("assets\image-background.jpg");
+}
+
+.app {
+    display: flex;
+}
+
+header {
+  height: 50px;
+  background-color: #d9d9d9;
+  border-bottom: 1px solid black;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: #d9d9d9;
+    border-right: 1px solid black;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 25px;
+    margin: 10px;
+}
+
+button:hover {
+    height: 60px;
+    width: 110px;
+    border: 1px solid black;
+}
+
+button:active {
+    height: 50px;
+    width: 100px;
 }
