@@ -66,10 +66,10 @@ main {
 }
 
 .message {
-    height: 100px;
-    width: 100px;
-    background-color: red;
-    margin: 50px 50px 0 0;
+    height: 100%;
+    width: 90%;
+    border: 1px solid red;
+    margin: 10px 0 10px 10px;
 }
 
 .container-input {

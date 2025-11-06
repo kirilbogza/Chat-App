@@ -18,6 +18,7 @@ function Layout({ connectionStatus, messages }: LayoutProps) {
     <>
       <header></header>
       <main className="app">
+        {/* sidebar */}
         <div
           className="sidebar"
           style={{
@@ -26,8 +27,6 @@ function Layout({ connectionStatus, messages }: LayoutProps) {
             flexDirection: isSideBarOpen ? "row-reverse" : "row-reverse",
           }}
         >
-          {/* <p>{connectionStatus}</p> */}
-
           <button onClick={openSidebar} className="button-sidebar">
             {buttonUnactive ? "→ ←" : "← →"}
           </button>
@@ -42,6 +41,7 @@ function Layout({ connectionStatus, messages }: LayoutProps) {
             </div>
           </div>
         </div>
+        {/* container */}
         <div className="container-chat">
           <div className="message">
             {messages.map((message) => (
