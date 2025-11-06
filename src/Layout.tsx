@@ -46,12 +46,16 @@ function Layout({ messages, emitEvent, userInput, setUserInput }: LayoutProps) {
         </div>
         {/* container */}
         <div className="container-chat">
-          <div className="message">
+          <div className="container-message">
             {messages.map((message, index) => (
-              <p key={index}>{message}</p>
+              <div key={index} className="message">
+                <img
+                  src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-Transparent.png"
+                  alt=""
+                />
+                <p>{message}</p>
+              </div>
             ))}
-          <img src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-Transparent.png" alt="" />
-
           </div>
           <div className="container-input">
             <input
