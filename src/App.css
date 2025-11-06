@@ -69,7 +69,8 @@ main {
     height: 100%;
     width: 90%;
     border: 1px solid red;
-    margin: 10px 0 10px 10px;
+    margin: 10px 0 10px 0px;
+    padding: 20px;
 }
 
 .container-input {
@@ -82,7 +83,7 @@ main {
 input {
     height: 80px;
     width: 100%;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     border-radius: 20px;
     border: none;
     background-color: #d9d9d9;

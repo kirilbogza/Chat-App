@@ -1,11 +1,13 @@
 import { useState } from "react";
 
 type LayoutProps = {
-  connectionStatus: string;
   messages: string[];
+  emitEvent: () => void;
+  userInput: string;
+  setUserInput: (value: string) => void;
 };
 
-function Layout({ connectionStatus, messages }: LayoutProps) {
+function Layout({ messages, emitEvent, userInput, setUserInput }: LayoutProps) {
   const [isSideBarOpen, setSideBarOpen] = useState(false);
   const [buttonUnactive, setButtonActive] = useState(false);
 
@@ -30,6 +32,7 @@ function Layout({ connectionStatus, messages }: LayoutProps) {
           <button onClick={openSidebar} className="button-sidebar">
             {buttonUnactive ? "→ ←" : "← →"}
           </button>
+
           <div
             style={{
               display: isSideBarOpen ? "block" : "none",
@@ -44,16 +47,22 @@ function Layout({ connectionStatus, messages }: LayoutProps) {
         {/* container */}
         <div className="container-chat">
           <div className="message">
-            {messages.map((message) => (
-              <p>{message}</p>
+            {messages.map((message, index) => (
+              <p key={index}>{message}</p>
             ))}
           </div>
           <div className="container-input">
-            <input type="text" placeholder="Write your message" />
+            <input
+              type="text"
+              placeholder="Write your message"
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+            />
             <button
               className="button-submit"
               type="submit"
               title="none"
+              onClick={emitEvent}
             ></button>
           </div>
         </div>
