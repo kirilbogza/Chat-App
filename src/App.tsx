@@ -11,6 +11,7 @@ function App() {
   const [connected, setConnected] = useState(false);
   const [messages, setMessages] = useState<string[]>([]);
   const [userInput, setUserInput] = useState("");
+  const [hours, setHours] = useState(Number);
 
   const connectionStatus = connected ? "Connected" : "Disconnected";
 
@@ -38,6 +39,10 @@ function App() {
 
     setMessages((prev) => [...prev, userInput]);
 
+    const date = new Date()
+    const hours = date.getHours()
+    setHours(hours)
+    
     socket.emit("chat_everybody", userInput);
     setUserInput("");
   };
@@ -48,6 +53,7 @@ function App() {
         emitEvent={emitEvent}
         userInput={userInput}
         setUserInput={setUserInput}
+        hours={hours}
       ></Layout>
     </>
   );

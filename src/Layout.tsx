@@ -5,9 +5,10 @@ type LayoutProps = {
   emitEvent: () => void;
   userInput: string;
   setUserInput: (value: string) => void;
+  hours: number;
 };
 
-function Layout({ messages, emitEvent, userInput, setUserInput }: LayoutProps) {
+function Layout({ messages, emitEvent, userInput, setUserInput, hours }: LayoutProps) {
   const [isSideBarOpen, setSideBarOpen] = useState(false);
   const [buttonUnactive, setButtonActive] = useState(false);
 
@@ -54,6 +55,7 @@ function Layout({ messages, emitEvent, userInput, setUserInput }: LayoutProps) {
                   alt=""
                 />
                 <p>{message}</p>
+                <p>{hours}</p>
               </div>
             ))}
           </div>
