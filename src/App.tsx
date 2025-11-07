@@ -41,6 +41,7 @@ function App() {
     socket.emit("chat_everybody", userInput);
     setUserInput("");
   };
+
   return (
     <>
       <Layout
